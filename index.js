@@ -1,5 +1,5 @@
 var sidelnks=document.getElementsByClassName("linkheader");
-var currentvisible="";
+var currentvisible=document.getElementsByName("targetid")[0];
 for (let index = 0; index < sidelnks.length; index++) {
     const element = sidelnks[index];
     if(element.id){
