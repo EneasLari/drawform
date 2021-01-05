@@ -23,3 +23,5 @@ function maketargetVsible(buttonid)
     currentvisible=elementtomakevisible;
     console.log(currentvisible)
 }
+
+
