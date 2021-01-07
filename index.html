@@ -38,7 +38,7 @@
         <div class="container-fluid" style="padding-top: 30px;padding-bottom: 30px;">
             <div class="row">
                 <div class="col text-center">
-                    <h1>DRAWFORM</h1>
+                    <a  href="index.html" style="text-decoration: none;color: #212529;"><h1>DRAWFORM</h1></a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
                     </form>
                     <ul class="navbar-nav me-auto mb-2 mb-sm-0" style="padding-left: 30px;">
                         <li class="nav-item active">
-                            <a class="nav-link" aria-current="page" href="#">My Procurement</a>
+                            <a class="nav-link" aria-current="page" href="#">MY PROCUREMENT</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
@@ -73,25 +73,25 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
-                                aria-expanded="false"> Κατηγορίες</a>
+                                aria-expanded="false">ΚΑΤΗΓΟΡΙΕΣ</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="#">Σχέδια Κατασκευών</a></li>
-                                <li><a class="dropdown-item" href="#">Υλικά Κατασκευών</a></li>
-                                <li><a class="dropdown-item" href="#">Βοηθητικές υπηρεσίες</a></li>
-                                <li><a class="dropdown-item" href="#">Become a partner</a></li>
-                                <li><a class="dropdown-item" href="#">Εταιρική κοινωνική ευθύνη</a></li>
-                                <li><a class="dropdown-item" href="#">Υπηρεσίες σχεδίασης</a></li>
-                                <li><a class="dropdown-item" href="#">Contact Us</a></li>
-                                <li><a class="dropdown-item" href="#">Industrial room</a></li>
+                                <li><a class="dropdown-item" href="nextproject.html">ΣΧΕΔΙΑ ΣΥΝΑΡΜΟΓΩΝ</a></li>
+                                <li><a class="dropdown-item" href="#">ΠΡΟΙΟΝΤΑ ΣΥΝΑΡΜΟΓΩΝ</a></li>
+                                <li><a class="dropdown-item" href="#">ΥΠΗΡΕΣΙΕΣ ΠΑΡΑΓΩΓΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΥΠΗΡΕΣΙΕΣ ΣΧΕΔΙΑΣΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΕΡΓΑΣΤΗΡΙΑ ΠΑΡΑΓΩΓΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΓΙΝΕ ΣΥΝΕΡΓΑΤΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΕΤΑΙΡΙΚΗ ΚΟΙΝΩΝΙΚΗ ΕΥΘΥΝΗ</a></li>
+                                <!-- <li><a class="dropdown-item" href="#">Industrial room</a></li>
                                 <li><a class="dropdown-item" href="#">Educational Draws-Les</a></li>
-                                <li><a class="dropdown-item" href="#">Διαγωνισμοί</a></li>
+                                <li><a class="dropdown-item" href="#">Διαγωνισμοί</a></li> -->
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="#">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="#">BLOG</a>
                         </li>
 
                     </ul>
@@ -140,8 +140,6 @@
     </main>
 
     <div class="container" style="padding-top: 30px;">
-
-
 
 
 
@@ -365,6 +363,28 @@
         </div>
     </div> -->
     <!-- =============================================END side navigation bar============================================================ -->
+
+    <!-- ==================FOOTER=============================== -->
+    <footer class="text-center">
+        <span>DrawForm © 2020-<span id="footeryear">Now </span> </span>
+    </footer>
+
+
+    <style>
+        footer {
+            padding-top: 80px;
+            padding-bottom: 20px;
+            background-color: #0D6EFD;
+            color: rgba(255, 255, 255, 0.727);
+        }
+    </style>
+
+    <script>
+        var footeryear = document.getElementById("footeryear");
+        footeryear.innerHTML = (new Date()).getFullYear();
+    </script>
+
+    <!-- ==================END FOOTER=============================== -->
 
     <!-- Option 1: Bootstrap Bundle with Popper  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
