@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="index.css">
+
+    <title>DrawForm</title>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+        <div class="container-fluid" style="padding-top: 30px;padding-bottom: 30px;">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="index.html" style="text-decoration: none;color: #212529;">
+                        <h1>DRAWFORM</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- =====BLUE NAVBAR===== -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary" aria-label="Third navbar example">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Expand at sm</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample03">
+
+                    <form class="nav-search">
+                        <input class="form-control" type="text" placeholder="Αναζήτηση" aria-label="Search">
+                    </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-sm-0" style="padding-left: 30px;">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="#">MY PROCUREMENT</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+                                aria-expanded="false">Newsfeed</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                <li><a class="dropdown-item" href="#">Άρθρα Κατασκευών</a></li>
+                                <li><a class="dropdown-item" href="#">Video Κατασκευών</a></li>
+                            </ul>
+                        </li> -->
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+                                aria-expanded="false">ΚΑΤΗΓΟΡΙΕΣ</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                <li><a class="dropdown-item" href="nextproject.html">ΣΧΕΔΙΑ ΣΥΝΑΡΜΟΓΩΝ</a></li>
+                                <li><a class="dropdown-item" href="#">ΠΡΟΙΟΝΤΑ ΣΥΝΑΡΜΟΓΩΝ</a></li>
+                                <li><a class="dropdown-item" href="#">ΥΠΗΡΕΣΙΕΣ ΠΑΡΑΓΩΓΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΥΠΗΡΕΣΙΕΣ ΣΧΕΔΙΑΣΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΕΡΓΑΣΤΗΡΙΑ ΠΑΡΑΓΩΓΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΓΙΝΕ ΣΥΝΕΡΓΑΤΗΣ</a></li>
+                                <li><a class="dropdown-item" href="#">ΕΤΑΙΡΙΚΗ ΚΟΙΝΩΝΙΚΗ ΕΥΘΥΝΗ</a></li>
+                                <!-- <li><a class="dropdown-item" href="#">Industrial room</a></li>
+                                <li><a class="dropdown-item" href="#">Educational Draws-Les</a></li>
+                                <li><a class="dropdown-item" href="#">Διαγωνισμοί</a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BLOG</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- ===========BEFORE LOGIN============== -->
+
+                <button class="btn btn-secondary" type="button"
+                    style="padding: 5px; background-color: rgba(128, 128, 128, 0);border-color: rgba(128, 128, 128, 0);">
+                    <img src="enter.svg" alt="" width="25" height="25" class="d-inline-block align-top"
+                        style="filter: invert(100%);">
+                </button>
+
+                <!-- ===========END BEFORE LOGIN============== -->
+
+
+
+                <!-- ===========AFTER LOGIN============== -->
+
+                <button class="btn btn-secondary" type="button"
+                    style="padding: 5px; background-color: rgba(128, 128, 128, 0);border-color: rgba(128, 128, 128, 0);">
+                    <img src="notification.svg" alt="" width="25" height="25" class="d-inline-block align-top"
+                        style="filter: invert(100%);">
+                </button>
+
+                <div class="dropstart" id="usersdropdown">
+                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        style="padding: 0px;margin-right: 20px; background-color: rgba(128, 128, 128, 0);border-color: rgba(128, 128, 128, 0);">
+                        <img src="user.svg" alt="" width="34" height="34" class="d-inline-block align-top"
+                            style="filter: invert(100%);">
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Username</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                    </ul>
+                </div>
+
+                <!-- ===========END AFTER LOGIN============== -->
+
+            </div>
+        </nav>
+        <!-- =====END OF BLUE NAVBAR====== -->
+
+    </main>
+
+    <div class="container" style="padding-top: 30px;">
+
+
+
+        <div class="container text-center" style="margin-bottom: 50px;">
+            <h3>ΠΡΟΙΟΝΤΑ ΣΥΝΑΡΜΟΓΩΝ</h3>
+        </div>
+
+        <style>
+            .btn-group-sm .btn-outline-primary {
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+
+            .titlos-kartas {
+                text-decoration: none;
+                color: white;
+                transition: all .1s ease-in-out;
+            }
+
+            .titlos-kartas:hover {
+                transform: scale(1.1) translateY(10px);
+            }
+        </style>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="img/διαφορα εργα11111.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΕΡΓΑΛΕΙΑ ΧΕΙΡΟΣ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="img/2.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΒΙΔΟΠΟΙΙΑ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="img/eidi-kigkalerias.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΕΙΔΗ ΚΙΓΚΑΛΕΡΙΑΣ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="img/unnamed.png" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΥΔΡΑΥΛΙΚΑ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="img/ilektrikaergalia.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΗΛΕΚΤΡΙΚΑ ΕΡΓΑΛΕΙΑ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="img/sygkoliseis_ForumTraining.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΣΥΓΚΟΛΛΗΣΗ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="img/download.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΗΛΕΚΤΡΟΛΟΓ. ΕΞΟΠΛΙΣ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="tools.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΕΞΑΡΤΗΜΑΤΑ ΑΕΡΟΣ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+                    <div class="card bg-dark text-white text-center">
+                        <a href="brandselection.html">
+                            <img src="tools.jpg" class="card-img" alt="..."
+                                style="max-height:100px;min-height: 100px;object-fit: cover;">
+                            <div class="card-img-overlay" style="height: 100%;width: 100%;background-color:#0202026b;">
+                            </div>
+                            <div class="card-img-overlay titlos-kartas">
+                                <h5 class="card-title">ΑΝΑΛΩΣΙΜΑ ΧΡΩΜΑΤΟΠΩΛΕΙΟΥ</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as</p> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <!-- ==================FOOTER=============================== -->
+    <footer class="pagefooter text-center">
+        <span>DrawForm © 2020-<span id="footeryear">Now </span> </span>
+    </footer>
+
+
+    <style>
+        .pagefooter {
+            padding-top: 80px;
+            padding-bottom: 20px;
+            background-color: #0D6EFD;
+            color: rgba(255, 255, 255, 0.727);
+        }
+    </style>
+
+    <script>
+        var footeryear = document.getElementById("footeryear");
+        footeryear.innerHTML = (new Date()).getFullYear();
+    </script>
+
+    <!-- ==================END FOOTER=============================== -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+
+    <script src="index.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
