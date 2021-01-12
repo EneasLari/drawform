@@ -1,0 +1,18 @@
+<footer class="pagefooter text-center">
+    <span>DrawForm © 2020-<span id="footeryear">Now </span> </span>
+</footer>
+
+
+<style>
+    .pagefooter {
+        padding-top: 80px;
+        padding-bottom: 20px;
+        background-color: #0D6EFD;
+        color: rgba(255, 255, 255, 0.727);
+    }
+</style>
+
+<script>
+    var footeryear = document.getElementById("footeryear");
+    footeryear.innerHTML = (new Date()).getFullYear();
+</script>

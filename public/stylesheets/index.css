@@ -1,0 +1,9 @@
+@media (max-width: 576px) {
+    .nav-search {
+        padding-top: 15px;
+    }
+}
+
+.card {
+    margin-bottom: 20px;
+}
