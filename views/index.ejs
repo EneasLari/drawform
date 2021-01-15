@@ -13,261 +13,100 @@
 
     <title>DrawForm</title>
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-        
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
 
 </head>
 
 <body>
 
+    <div>
+        <%- include('navbar'); -%>
+    </div>
 
-    <%- include('navbar'); -%>
+    <div class="container" style="padding-top: 30px;">
 
-        <div class="container" style="padding-top: 30px;">
-
-
-
-
-            <!-- CARD WITH TITLE AND BODY WITHOUT IMAGE -->
-            <div class="card">
-                <h5 class="card-header">Featured</h5>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+        <!-- CARD WITH TITLE AND BODY WITHOUT IMAGE -->
+        <div class="card">
+            <h5 class="card-header">Featured</h5>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
+        </div>
 
-            <!-- CARD FOR QUOTING -->
-
-            <div class="card">
-                <div class="card-header">
-                    Quote
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
-                        </footer>
-                    </blockquote>
-                </div>
+        <!-- CARD FOR QUOTING -->
+        <div class="card">
+            <div class="card-header">
+                Quote
             </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source
+                            Title</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
 
-            <!-- CARD WITH TEXT AT CENTER -->
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+        <!-- CARD WITH TEXT AT CENTER -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
-
-
-            <!-- CARD WITH IMAGE ABOVE -->
-            <div class="card mb-3">
-                <img src="images/tools.jpg" class="card-img-top" alt="..." style="max-height: 300px;object-fit: cover;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-
-            <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
-            <div class="card bg-dark text-white">
-                <img src="images/tools.jpg" class="card-img" alt="..." style="max-height: 300px;object-fit: cover;">
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================side navigation bar================================================================ -->
-        <!-- <div class="d-md-flex bd-highlight navbar-expand-sm"
-        style="padding-top: 30px;padding-left: 10px; padding-right: 10px;">
-        <div class="flex-column text-center " style="padding-top:50px;">
-            <div style="padding: 3px">
-                <button id="targetid" style="width: 100%" type="button" class="btn btn-outline-dark linkheader">Διάλεξε
-                    την κατασκευή
-                    σου</button>
-            </div>
-
-            <div style="padding: 3px">
-                <button id="tabletarget" style="width: 100%" type="button"
-                    class="btn btn-outline-dark linkheader">Διάλεξε τα υλικα </button>
-            </div>
-
-            <div style="padding: 3px">
-                <button id="resp-image" style="width: 100%" type="button"
-                    class="btn btn-outline-dark linkheader">Βοηθητικές υπηρεσίες</button>
-            </div>
-            <div style="padding: 3px">
-                <button id="resp-card" style="width: 100%" type="button" class="btn btn-outline-dark linkheader">Become
-                    a partner</button>
-            </div>
-            <div style="padding: 3px">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Εταιρική κοινωνική
-                    ευθύνη</button>
-            </div>
-            <div style="padding: 3px">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Υπηρεσίες σχεδίασης</button>
-            </div>
-            <div style="padding: 3px">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Υπηρεσίες σχεδίασης</button>
-            </div>
-            <div style="padding: 3px">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Contact Us</button>
-            </div>
-
-            <div style="padding: 3px">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Industrial room</button>
-            </div>
-
-            <div style="padding: 3px">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Educational Draws-Les</button>
-            </div>
-
-            <div style="padding: 3px">
-                <button style="width: 100%" type="button" class="btn btn-outline-dark">Διαγωνισμοί</button>
-            </div>
-
-        </div>
-
-        <div class="flex-column text-center flex-grow-1">
-            <h1>Category Title</h1>
-            <div name="targetid" style="display: block;padding: 10px;">
-                <img style="max-width: 200px;" src="pexels-energepiccom-175039.jpg" class="rounded float-start"
-                    alt="...">
-                <img style="max-width: 200px;" src="pexels-energepiccom-175039.jpg" class="rounded float-end" alt="...">
-            </div>
-
-            <div name="tabletarget" style="display: none;">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div name="resp-image" style="display: none;">
-                <img src="pexels-energepiccom-175039.jpg" class="img-fluid" style="max-width: 600px;" alt="...">
-            </div>
-
-            <div name="resp-card" style="display: none;">
-
-
-                <div class="card bg-dark text-white">
-                    <img src="pexels-energepiccom-175039.jpg" class="img-fluid"
-                        style="max-height: 500px;object-fit:cover;" alt="...">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <p class="card-text">Last updated 3 mins ago</p>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div> -->
-        <!-- =============================================END side navigation bar============================================================ -->
 
-        <!-- ==================FOOTER=============================== -->
+
+        <!-- CARD WITH IMAGE ABOVE -->
+        <div class="card mb-3">
+            <img src="images/tools.jpg" class="card-img-top" alt="..." style="max-height: 300px;object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+
+        <!-- CARD WITH IMAGE AND TEXT ON IMAGE -->
+        <div class="card bg-dark text-white">
+            <img src="images/tools.jpg" class="card-img" alt="..." style="max-height: 300px;object-fit: cover;">
+        </div>
+
+    </div>
+
+    <!-- ==================FOOTER=============================== -->
+    <div>
         <%- include('footer') -%>
+    </div>
 
 
-            <!-- ==================END FOOTER=============================== -->
+    <!-- ==================END FOOTER=============================== -->
 
-            <!-- Option 1: Bootstrap Bundle with Popper  -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-            </script>
+    <!-- Option 1: Bootstrap Bundle with Popper  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="javascripts/index.js"></script>
 
-            <script src="javascripts/index.js"></script>
-
-            <!-- Option 2: Separate Popper and Bootstrap JS -->
-            <!--
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->

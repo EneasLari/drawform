@@ -57,7 +57,7 @@
 
 
     <main class="form-signin">
-        <form method="POST" action="/api/users">
+        <form method="POST" action="/api/users" class="register">
             <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Register to DrawForm</h1>
 
@@ -83,7 +83,7 @@
         </form>
 
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         var imageoverview = document.getElementById("imagepreview");
         var formfile = document.getElementById("formFile")
@@ -99,6 +99,32 @@
             }
 
         })
+
+
+        var form = document.getElementsByClassName("register")[0]
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            const siginrequest = {
+                name: document.getElementsByName("name")[0].value,
+                email: document.getElementsByName('email')[0].value,
+                password: document.getElementsByName('password')[0].value
+            };
+            console.log(siginrequest)
+            if (sessionStorage.getItem('jwt')) {
+                sessionStorage.removeItem('jwt')
+            }
+            axios.post('http://localhost:5000/' + 'api/users', siginrequest)
+                .then(res => {
+                    //save jwt token as cookie if given from post form
+                    sessionStorage.setItem('jwt', JSON.stringify(res.data.token))
+                    sessionStorage.setItem('userlogged', res.data.user.name)
+                    sessionStorage.setItem('UserID', res.data.user._id)
+                        // Simulate an HTTP redirect:
+                    window.location.replace("/");
+                }).catch(err => {
+                    console.log(err);
+                });
+        }
     </script>
 
 

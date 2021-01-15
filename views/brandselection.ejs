@@ -13,84 +13,63 @@
 
     <title>DrawForm</title>
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-        
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
 
-    <%- include('navbar'); -%>
+    <div>
+        <%- include('navbar'); -%>
+    </div>
 
-        <div class="container" style="padding-top: 30px;">
+
+    <div class="container" style="padding-top: 30px;">
 
 
 
-            <div class="container text-center" style="margin-bottom: 50px;">
-                <h3>ΚΑΤΑΣΚΕΥΑΣΤΕΣ</h3>
-            </div>
+        <div class="container text-center" style="margin-bottom: 50px;">
+            <h3>ΚΑΤΑΣΚΕΥΑΣΤΕΣ</h3>
+        </div>
 
-            <style>
-                .btn-group-sm .btn-outline-primary {
-                    margin-right: 5px;
-                    margin-bottom: 5px;
-                }
-            </style>
+        <style>
+            .btn-group-sm .btn-outline-primary {
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
 
-            <div class="container-fluid">
+        <div class="container-fluid">
 
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
 
-                        <!-- CARD WITH IMAGE ABOVE -->
-                        <div class="card mb-3 ">
-                            <a href="storeselection">
-                                <img src="images/stanley.png" class="card-img-top" alt="..." style="object-fit: cover;">
-                            </a>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Stanley</h5>
-                                <p class="card-text text-start"><small class="text-muted">10 καταστηματα</small></p>
-                            </div>
-
+                    <!-- CARD WITH IMAGE ABOVE -->
+                    <div class="card mb-3 ">
+                        <a href="storeselection">
+                            <img src="images/stanley.png" class="card-img-top" alt="..." style="object-fit: cover;">
+                        </a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Stanley</h5>
+                            <p class="card-text text-start"><small class="text-muted">10 καταστηματα</small></p>
                         </div>
+
                     </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                        <!-- CARD WITH IMAGE ABOVE -->
-                        <div class="card mb-3">
-                            <a href="storeselection">
-                                <img src="images/total.png" class="card-img-top" alt="..." style="object-fit: cover;">
-                            </a>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Total</h5>
-                                <p class="card-text text-start"><small class="text-muted">45 καταστήματα</small></p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
 
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <!-- CARD WITH IMAGE ABOVE -->
+                    <div class="card mb-3">
+                        <a href="storeselection">
+                            <img src="images/total.png" class="card-img-top" alt="..." style="object-fit: cover;">
+                        </a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Total</h5>
+                            <p class="card-text text-start"><small class="text-muted">45 καταστήματα</small></p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
-
-
-
 
 
 
@@ -98,19 +77,30 @@
 
 
 
-        <!-- ==================FOOTER=============================== -->
+
+
+
+
+    </div>
+
+
+
+    <!-- ==================FOOTER=============================== -->
+    <div>
         <%- include('footer') -%>
+    </div>
 
-            <!-- ==================END FOOTER=============================== -->
 
-            <!-- Option 1: Bootstrap Bundle with Popper  -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-            </script>
+    <!-- ==================END FOOTER=============================== -->
 
-            <script src="javascripts/index.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
 
-            <!-- Option 2: Separate Popper and Bootstrap JS -->
-            <!--
+    <script src="javascripts/index.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
