@@ -39,6 +39,7 @@ const create = function(req, res, next) {
 // it must call next() to pass control to the next middleware 
 //function. Otherwise, the request will be left hanging.
 const userByID = function(req, res, next, id) {
+    console.log("USERBYUD")
     User.findById(id).exec(function(err, user) {
         if (err || !user)
             return res.status('400').json({
@@ -71,7 +72,6 @@ const update = function(req, res, next) {
     let user = req.profile
     user = _.extend(user, req.body)
     user.updated = Date.now()
-    console.log("Update" + req.body.IsDeleted)
     user.save(function(err) {
         if (err) {
             return res.status(400).json({
@@ -103,5 +103,5 @@ module.exports = {
     userByID,
     read,
     remove,
-    update
+    update,
 }

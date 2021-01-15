@@ -5,14 +5,17 @@ const DesignSchema = new mongoose.Schema({
     Description: {
         type: String,
         trim: true,
-        required: 'Main body of article is required'
     },
     ShortDescription: {
         type: String,
         trim: true,
-        required: 'Short description of article is required'
+        required: 'Short description of design is required'
     },
     Image: {
+        type: String,
+        trim: true
+    },
+    Price: {
         type: String,
         trim: true
     },
@@ -20,6 +23,7 @@ const DesignSchema = new mongoose.Schema({
         type: Schema.ObjectId,
         ref: 'User',
         trim: true,
+        required: 'there is no user who creted the design'
     },
     IsPublished: {
         type: Boolean,

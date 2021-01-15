@@ -15,7 +15,6 @@ var signin = function(req, res) {
             })
 
         if (!user.authenticate(req.body.password)) {
-            console.log("Not authenticated bro");
             return res.status('401').send({
                 error: "Email and password don't match."
             })
@@ -24,12 +23,11 @@ var signin = function(req, res) {
         var token = jwt.sign({
             _id: user._id
         }, config.jwtSecret)
-
+        console.log("TOKEN"+token)
         res.cookie("t", token, {
             expire: new Date() + 9999
         })
         var user = { _id: user._id, name: user.name, email: user.email }
-        console.log(user);
         return res.json({
             token,
             user: { _id: user._id, name: user.name, email: user.email }
@@ -52,8 +50,8 @@ var requireSignin = expressJwt({
 })
 
 var hasAuthorization = function(req, res, next) {
-    console.log(req.profile)
     console.log(req.auth)
+    console.log(req.profile)
     var authorized = req.profile && req.auth && req.profile._id == req.auth._id
     if (!(authorized)) {
         return res.status('403').json({

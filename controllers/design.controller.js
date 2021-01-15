@@ -1,8 +1,8 @@
 var Design = require('../models/design.model');
 var _ = require('lodash')
 
-const designslist = function(req, res) {
-    Design.find(function(err, designs) {
+const designslist = function (req, res) {
+    Design.find(function (err, designs) {
         if (err) {
             return res.status(400).json({
                 error: (err)
@@ -12,37 +12,95 @@ const designslist = function(req, res) {
     })
 }
 
-const update = function(req, res, next) {
-    let user = req.profile
-    user = _.extend(user, req.body)
-    user.updated = Date.now()
-    console.log("Update" + req.body.IsDeleted)
-    user.save(function(err) {
+const create = (req, res, next) => {
+    const design = new Design(req.body)
+    if (isNaN(design.Price)) {
+        return res.status(400).json({
+            error: "Price must be number"
+        })
+    }
+    design.Image = req.fileid //the received req.fileid comes from uploadimage
+    //console.log(design);
+    design.save((err, result) => {
         if (err) {
             return res.status(400).json({
-                error: (err)
+                error: "Error saving design"
+                // error: errorHandler.getErrorMessage(err)
             })
         }
-        user.hashed_password = undefined
-        user.salt = undefined
-        res.json(user)
+        return res.status(200).json({
+            design: result
+        })
     })
 }
 
-const remove = function(req, res, next) {
-    let user = req.profile
-    user.remove(function(err, deletedUser) {
+const designByID = function (req, res, next, id) {
+    Design.findById(id).exec(function (err, design) {
+        if (err || !design)
+            return res.status('400').json({
+                error: "design not found"
+            })
+        req.design = design
+        next() //calls the next controller
+    })
+}
+//check if the user of design is the logged in user giving the handle of request to hasauthorization (if next is hasAuthorization)
+const designUser = function (req, res, next) {
+    req.profile = {
+        _id: req.design.UserId
+    }
+    console.log("USER OF DESIGN " + req.profile._id)
+    next()
+}
+
+const myDesigns=function (req,res) {
+    console.log(req.auth._id)
+    Design.find({UserId:req.auth._id}).exec(function (err,designs){
+        if(err){
+            return res.status('400').json({
+                error: "designs not found"
+            })
+        }
+        res.json(designs)
+    })
+}
+
+const update = function (req, res, next) {
+    let design = req.design
+    design = _.extend(design, req.body)
+    design.save(function (err) {
         if (err) {
             return res.status(400).json({
                 error: (err)
             })
         }
-        deletedUser.hashed_password = undefined
-        deletedUser.salt = undefined
-        res.json(deletedUser)
+        res.json(design)
     })
+}
+
+const remove = function (req, res, next) {
+    let design = req.design
+    design.remove(function (err, deleteddesign) {
+        if (err) {
+            return res.status(400).json({
+                error: (err)
+            })
+        }
+        res.json(deleteddesign)
+    })
+}
+
+const read = function (req, res) {
+    return res.json(req.design)
 }
 
 module.exports = {
-    designslist
+    create,
+    designslist,
+    update,
+    remove,
+    designByID,
+    read,
+    designUser,
+    myDesigns
 }
