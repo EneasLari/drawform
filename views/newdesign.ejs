@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="stylesheets/index.css">
+
+    <title>DrawForm</title>
+
+</head>
+
+<body>
+    <div>
+        <%- include('navbar'); -%>
+    </div>
+
+
+    <div class="container" style="padding-top: 30px;">
+
+
+
+        <div class="container text-center">
+            <h3 id="headerTitle">User Name</h3>
+        </div>
+
+        <div class="container" style="padding-top: 30px;">
+            <h4 style="padding-bottom: 30px;">Προσθήκη νέου σχεδίου</h4>
+            <div class="row">
+
+
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div class="card mb-3 ">
+                        <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="..." id="imagepreview" style="object-fit: cover;">
+                        <div class="card-body">
+
+                            <form class="newdesign">
+                                <div class="mb-3">
+                                    <input class="form-control" id="formFile" type="file">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="shortdescription" class="form-label">Περιγραφή</label>
+                                    <input type="text" name="ShortDescription" class="form-control" id="shortdescription">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Σημειώσεις</label>
+                                    <textarea type="text" name="Description" class="form-control" id="description" rows="3"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">Τιμή</label>
+                                    <input type="text" name="Price" class="form-control" id="price">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2"></div>
+
+                <script>
+                    var imageoverview = document.getElementById("imagepreview");
+                    var formfile = document.getElementById("formFile")
+                    formfile.addEventListener("change", function() {
+                        const file = this.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function() {
+                                const result = reader.result;
+                                imageoverview.src = result;
+                            }
+                            reader.readAsDataURL(file);
+                        }
+
+                    })
+
+
+                    var form = document.getElementsByClassName("newdesign")[0]
+                    form.onsubmit = function(e) {
+                        e.preventDefault();
+                        const siginrequest = {
+                            method: "POST",
+                            url: 'http://localhost:5000' + '/api/designs',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Bearer ' + JSON.parse(sessionStorage.getItem('jwt')) //json parse is important
+                            },
+                            data: {
+                                Description: document.getElementById("description").value,
+                                ShortDescription: document.getElementById("shortdescription").value,
+                                Price: document.getElementById('price').value,
+                                UserId: sessionStorage.getItem("UserID")
+                            }
+
+
+                        };
+                        console.log(siginrequest)
+                        axios(siginrequest)
+                            .then(res => {
+                                // Simulate an HTTP redirect:
+                                window.location.replace("/myprofile");
+                            }).catch(err => {
+                                console.log(err);
+                            });
+                    }
+                </script>
+
+
+            </div>
+        </div>
+        <hr>
+        <style>
+            .btn-group-sm .btn-outline-primary {
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+
+    </div>
+
+
+
+    <!-- ==================FOOTER=============================== -->
+    <div>
+        <%- include('footer') -%>
+    </div>
+
+
+    <!-- ==================END FOOTER=============================== -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="javascripts/index.js"></script>
+
+    <script src="javascripts/myprofile.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

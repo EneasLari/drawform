@@ -7,7 +7,7 @@ var authCtrl = require('../controllers/auth.controller');
 router.route('/api/designs')
     .get(designCtrl.designslist)
     .post(authCtrl.requireSignin, designCtrl.create)
-    
+
 router.route('/api/mydesigns')
     .get(authCtrl.requireSignin, designCtrl.myDesigns)
 

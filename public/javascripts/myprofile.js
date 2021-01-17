@@ -14,22 +14,23 @@ const req = {
         'Authorization': 'Bearer ' + JSON.parse(sessionStorage.getItem('jwt')) //json parse is important
     }
 }
-var designcard=document.getElementsByClassName("designcard")[0];
+var designcard = document.getElementsByClassName("designcard")[0];
 axios({
         method: req.method,
         url: 'http://localhost:5000/' + 'api/mydesigns/',
         headers: req.headers
     })
-    .then(function (res) {
-        console.log(res.data.length);
+    .then(function(res) {
+        if (res.data.length == 0) {
+            designcard.parentNode.innerHTML = '<p class="text-center">No designs found</p>'
+        }
         for (let index = 0; index < res.data.length; index++) {
             const element = res.data[index];
-            var newcard=designcard.cloneNode(true);
-            newcard.style.display="block";
-            console.log(element)
-            newcard.querySelector("#shortdescription").innerHTML=element.ShortDescription;
-            newcard.querySelector("#createdby").innerHTML=sessionStorage.getItem("userlogged").toString();
-            newcard.querySelector("#price").innerHTML=element.Price+"€";
+            var newcard = designcard.cloneNode(true);
+            newcard.style.display = "block";
+            newcard.querySelector("#shortdescription").innerHTML = element.ShortDescription;
+            newcard.querySelector("#createdby").innerHTML = sessionStorage.getItem("userlogged").toString();
+            newcard.querySelector("#price").innerHTML = element.Price + "€";
             designcard.parentNode.appendChild(newcard);
         }
     })

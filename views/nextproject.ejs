@@ -66,50 +66,53 @@
             <div class="row">
 
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 designcard" style="display: none;">
                     <!-- CARD WITH IMAGE ABOVE -->
-                    <div class="card mb-3">
+                    <div class="card mb-3 ">
                         <a href="designpreview">
                             <img src="images/blueprint-design-plan-house_23-2148316617.jpg" class="card-img-top" alt="..." style="object-fit: cover;">
                         </a>
                         <div class="card-body">
-                            <p class="card-text" style="margin-bottom: 5px;">This is a wider card with. This is a wider card with supporting.</p>
-                            <a href="#" class="btn btn-primary">1.50€</a>
+                            <p class="card-text" style="margin-bottom: 5px;" id="shortdescription">This is a wider card with. This is a wider card with supporting.</p>
+                            <a href="#" class="btn btn-primary" id="price">1.50€</a>
                             <p class="card-text"><small class="text-muted">Σχεδιάστηκε απο </small><a href=""><small
                                         id="createdby">panos23</small></a></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <!-- CARD WITH IMAGE ABOVE -->
-                    <div class="card mb-3">
-                        <a href="designpreview">
-                            <img src="images/images.jpg" class="card-img-top" alt="..." style="object-fit: cover;">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text" style="margin-bottom: 5px;">This is a wider card with. This is a wider card with supporting.</p>
-                            <a href="#" class="btn btn-primary">1.50€</a>
-                            <p class="card-text"><small class="text-muted">Σχεδιάστηκε απο </small><a href=""><small
-                                        id="createdby">nauarxos1974</small></a></p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <!-- CARD WITH IMAGE ABOVE -->
-                    <div class="card mb-3">
-                        <a href="designpreview">
-                            <img src="images/f629a96b3e97ed48433c2503ef876df7.jpg" class="card-img-top" alt="..." style="object-fit: cover;">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text" style="margin-bottom: 5px;">This is a wider card with. This is a wider card with supporting.</p>
-                            <a href="#" class="btn btn-primary">1.50€</a>
-                            <p class="card-text"><small class="text-muted">Σχεδιάστηκε απο </small><a href=""><small
-                                        id="createdby">antonisremos</small></a></p>
-                        </div>
-                    </div>
-                </div>
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+                <script>
+                    var mydesigns = document.getElementById("mydesigns")
+                    const req = {
+                        method: "GET",
+                    }
+                    var designcard = document.getElementsByClassName("designcard")[0];
+                    axios({
+                            method: req.method,
+                            url: 'http://localhost:5000/' + 'api/designs/',
+                        })
+                        .then(function(res) {
+                            if (res.data.length == 0) {
+                                designcard.parentNode.innerHTML = '<p class="text-center">No designs found</p>'
+                            }
+                            for (let index = 0; index < res.data.length; index++) {
+                                const element = res.data[index];
+                                console.log(element)
+                                var newcard = designcard.cloneNode(true);
+                                newcard.style.display = "block";
+                                newcard.querySelector("#shortdescription").innerHTML = element.ShortDescription;
+                                newcard.querySelector("#createdby").innerHTML = element.UserId.name.toString();
+                                newcard.querySelector("#price").innerHTML = element.Price + "€";
+                                designcard.parentNode.appendChild(newcard);
+                            }
+                        })
+                        .catch(err => {
+
+                        });
+                </script>
 
 
             </div>

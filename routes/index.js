@@ -37,5 +37,10 @@ router.get('/myprofile', function(req, res, next) {
     res.render('myprofile', { title: 'Express' });
 });
 
+/* GET home page. */
+router.get('/newdesign', function(req, res, next) {
+    res.render('newdesign', { title: 'Express' });
+});
+
 
 module.exports = router;
